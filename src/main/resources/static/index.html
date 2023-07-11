@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda - Vista Funcional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f0ba;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #53a08e;
+            color: #fff;
+            padding: 10px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        /* Estilos para el contenido */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            max-width: 800px;
+            padding: 20px;
+            background-color: #7ebea3;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 16px;
+
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            background-color: aliceblue;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #53a08e;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Title example</h1>
+
+        <h2>TotalDTO</h2>
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Cantidad de venta</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="date" id="fecha" value="2023-07-09">
+                </td>
+                <td contenteditable="true" id="cantidadVenta">5</td>
+                <td contenteditable="true" id="total">100.0</td>
+            </tr>
+        </table>
+
+        <h2>VentaMayorDTO</h2>
+        <table>
+            <tr>
+                <th>Código de venta</th>
+                <th>Total</th>
+                <th>Cantidad disponible</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+            <tr>
+                <td contenteditable="true" id="codigoVenta">123</td>
+                <td contenteditable="true" id="ventaTotal">250.0</td>
+                <td contenteditable="true" id="cantidadDisponible">10.0</td>
+                <td contenteditable="true" id="nombre">Juan</td>
+                <td contenteditable="true" id="apellido">Pérez</td>
+            </tr>
+        </table>
+
+        <h2>VentaProductoDTO</h2>
+        <table>
+            <tr>
+                <th>Código de venta</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+            <tr>
+                <td contenteditable="true" id="ventaProductoCodigoVenta">456</td>
+                <td contenteditable="true" id="productoCodigo">1</td>
+                <td contenteditable="true" id="productoNombre">Producto A</td>
+                <td contenteditable="true" id="productoPrecio">50.0</td>
+                <td contenteditable="true" id="productoCantidad">2</td>
+            </tr>
+        </table>
+
+        <button id="saveButton">Guardar cambios</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Derechos de autor - TuTienda</p>
+    </footer>
+
+    <script>
+        // Función para guardar los cambios realizados en la tabla
+        function saveChanges() {
+            var fecha = document.getElementById("fecha").value;
+            var cantidadVenta = document.getElementById("cantidadVenta").textContent;
+            var total = document.getElementById("total").textContent;
+            var codigoVenta = document.getElementById("codigoVenta").textContent;
+            var ventaTotal = document.getElementById("ventaTotal").textContent;
+            var cantidadDisponible = document.getElementById("cantidadDisponible").textContent;
+            var nombre = document.getElementById("nombre").textContent;
+            var apellido = document.getElementById("apellido").textContent;
+            var ventaProductoCodigoVenta = document.getElementById("ventaProductoCodigoVenta").textContent;
+            var productoCodigo = document.getElementById("productoCodigo").textContent;
+            var productoNombre = document.getElementById("productoNombre").textContent;
+            var productoPrecio = document.getElementById("productoPrecio").textContent;
+            var productoCantidad = document.getElementById("productoCantidad").textContent;
+
+            // Aquí puedes realizar las operaciones de guardado o envío de los datos actualizados
+            // a través de AJAX u otros métodos.
+
+            alert("Cambios guardados exitosamente.");
+        }
+
+        // Agregar evento al hacer clic en el botón de guardar
+        document.addEventListener("DOMContentLoaded", function() {
+            var saveButton = document.getElementById("saveButton");
+            saveButton.addEventListener("click", saveChanges);
+        });
+    </script>
+</body>
+</html>
